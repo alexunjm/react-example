@@ -8,8 +8,8 @@ class Parameters extends Component {
   render() {
     return (
       <div>
-        <p>array: {this.props.array}</p>
-        <p>boolean: {this.props.boolean}</p>
+        <p>array: {this.props.array.map(this.props.fn).join(', ')}</p>
+        <p>boolean: {this.props.boolean ? 'TRUE': 'FALSE'}</p>
         <p>number: {this.props.number}</p>
         <p>object value: {this.props.object.key}</p>
         <p>string: {this.props.string}</p>
@@ -31,7 +31,8 @@ function App() {
         boolean={true}
         number={4}
         object={{key: 'value', num: 5}}
-        string={"text"}
+        string={'my name is ' + name}
+        fn={(number) => number * 3}
       />
     </div>
   );
