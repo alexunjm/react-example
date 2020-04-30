@@ -2,8 +2,8 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-function Greeting() {
-  return <h1>Welcome</h1>
+function Greeting(props) {
+  return <h1>Welcome { props.name }</h1>
 }
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
     <div className="App">
       <header className="header">
         <img src={logo} className="logo" alt="logo" />
-        <Greeting />
+        <Greeting name="Alex" />
       </header>
     </div>
   );
