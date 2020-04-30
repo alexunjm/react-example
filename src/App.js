@@ -42,9 +42,9 @@ Title.defaultProps = {
 
 class Count extends Component {
 
-  constructor() {
-    super()
-    this.state = { counter: this.props.initVal } // no funcionan las props
+  constructor(props) {
+    super(props)
+    this.state = { counter: this.props.initVal }
     setInterval(() => {
       this.setState({ counter: this.state.counter + 1 })
     }, 2000)
@@ -57,6 +57,10 @@ class Count extends Component {
       </div>
     );
   }
+}
+
+Count.defaultProps = {
+  initVal: 0
 }
 
 class PrintNumber extends Component {
