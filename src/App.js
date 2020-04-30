@@ -53,9 +53,15 @@ class Count extends Component {
   render() {
     return (
       <div>
-        <h2>The counter is {this.state.counter}. Changed each 2 secs</h2>
+        <h2>The counter is <PrintNumber number={this.state.counter} />. Changed each 2 secs</h2>
       </div>
     );
+  }
+}
+
+class PrintNumber extends Component {
+  render() {
+    return <span>{this.props.number}</span>
   }
 }
 
