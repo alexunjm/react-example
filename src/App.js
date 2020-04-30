@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-const Greeting = (props) => <h1>Welcome { props.name }</h1>
+const Greeting = (props) => <h2>Welcome { props.name }</h2>
 
 class Parameters extends Component {
   render() {
@@ -30,14 +30,25 @@ class Parameters extends Component {
   }
 }
 
+class Title extends Component {
+  render() {
+    return <h1>{this.props.text}</h1>
+  }
+}
+
+Title.defaultProps = {
+  text: "React Components"
+}
+
 function App() {
   const name = 'Alexander Jaramillo'
   return (
     <div className="App">
       <header className="header">
         <img src={logo} className="logo" alt="logo" />
-        <Greeting name={ name } />
+        <Title />
       </header>
+      <Greeting name={ name } />
       <Parameters
         array={[1, 2, 3]}
         boolean={true}
