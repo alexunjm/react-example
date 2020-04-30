@@ -40,6 +40,18 @@ Title.defaultProps = {
   text: "React Components"
 }
 
+class Count extends Component {
+  state = {counter: 0};
+
+  render() {
+    return (
+      <div>
+        <h2>The counter is {this.state.counter}.</h2>
+      </div>
+    );
+  }
+}
+
 function App() {
   const name = 'Alexander Jaramillo'
   return (
@@ -59,6 +71,7 @@ function App() {
         fn={(number) => number * 3}
         jsxSyntax={<strong>param component</strong>}
       />
+      <Count />
     </div>
   );
 }
