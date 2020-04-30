@@ -11,13 +11,14 @@ class Footer extends Component {
 }
 
 function App() {
+  const name = 'Alexander Jaramillo'
   return (
     <div className="App">
       <header className="header">
         <img src={logo} className="logo" alt="logo" />
-        <Greeting name="Alexander Jaramillo" />
+        <Greeting name={ name } />
       </header>
-      <Footer name="Alexander Jaramillo" />
+      <Footer name={ name } />
     </div>
   );
 }
