@@ -4,9 +4,17 @@ import './App.css';
 
 const Greeting = (props) => <h1>Welcome { props.name }</h1>
 
-class Footer extends Component {
+class Parameters extends Component {
   render() {
-    return <div>Made with love by {this.props.name}</div>
+    return (
+      <div>
+        <p>array: {this.props.array}</p>
+        <p>boolean: {this.props.boolean}</p>
+        <p>number: {this.props.number}</p>
+        <p>object value: {this.props.object.key}</p>
+        <p>string: {this.props.string}</p>
+      </div>
+    )
   }
 }
 
@@ -18,7 +26,13 @@ function App() {
         <img src={logo} className="logo" alt="logo" />
         <Greeting name={ name } />
       </header>
-      <Footer name={ name } />
+      <Parameters
+        array={[1, 2, 3]}
+        boolean={true}
+        number={4}
+        object={{key: 'value', num: 5}}
+        string={"text"}
+      />
     </div>
   );
 }
