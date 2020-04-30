@@ -1,0 +1,12 @@
+{
+    "gitflow4code.features": [
+        {
+            "name": "feature/components",
+            "base": "develop"
+        },
+        {
+            "name": "feature/conditional-render",
+            "base": "develop"
+        }
+    ]
+}
