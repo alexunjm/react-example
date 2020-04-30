@@ -6,13 +6,25 @@ const Greeting = (props) => <h1>Welcome { props.name }</h1>
 
 class Parameters extends Component {
   render() {
+    const {
+      array,
+      boolean,
+      fn,
+      jsxSyntax,
+      number,
+      object,
+      string,
+      string2
+    } = this.props
+
     return (
       <div>
-        <p>array: {this.props.array.map(this.props.fn).join(', ')}</p>
-        <p>boolean: {this.props.boolean ? 'TRUE': 'FALSE'}</p>
-        <p>number: {this.props.number}</p>
-        <p>object value: {this.props.object.key}</p>
-        <p>string: {this.props.string}</p>
+        <p>array: {array.map(fn).join(', ')}</p>
+        <p>boolean: {boolean ? 'TRUE': 'FALSE'}</p>
+        <p>number: {number}</p>
+        <p>object value: {object.key}</p>
+        <p>string: {string2} {string}</p>
+        {jsxSyntax}
       </div>
     )
   }
@@ -32,7 +44,9 @@ function App() {
         number={4}
         object={{key: 'value', num: 5}}
         string={'my name is ' + name}
+        string2='hello, '
         fn={(number) => number * 3}
+        jsxSyntax={<strong>param component</strong>}
       />
     </div>
   );
